@@ -1,0 +1,62 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - TRATAMIENTOS Y ARANCELES MODULE
+   Pure Native CSS - Enterprise Corporate Standard
+   ========================================================= */
+
+.tratamientos-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tratamiento-code {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text-soft);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.duration-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.cat-badge-clinica {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  border: 1px solid var(--border);
+  display: inline-block;
+}
+
+/* =========================================================
+   KPIS REESTRUCTURADOS (FILA DE 2 COLUMNAS PERFECTA)
+   ========================================================= */
+.tratamientos-module .corp-kpis-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .tratamientos-module .corp-kpis-grid {
+    grid-template-columns: 1fr;
+  }
+}

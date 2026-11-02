@@ -1,0 +1,116 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - INVENTARIO & INSUMOS MODULE
+   Pure Native CSS - Enterprise Corporate Standard
+   ========================================================= */
+
+.inventario-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   BOTONES DE ACCIÓN RÁPIDA DE STOCK (+ / -)
+   ========================================================= */
+.inventario-module .act {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.inventario-module .act:hover {
+  background: var(--surface-3);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.inventario-module .act:active {
+  transform: scale(0.97);
+}
+
+/* Barra de Nivel de Existencia - Formato Ejecutivo */
+.stock-level-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stock-meter-track {
+  flex: 1;
+  height: 6px;
+  background: var(--surface-3);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stock-meter-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+
+.stock-meter-fill.critico {
+  background: var(--danger);
+}
+
+.stock-meter-fill.bajo {
+  background: var(--warn);
+}
+
+.stock-meter-fill.normal {
+  background: var(--ok);
+}
+
+/* Badge Discreto */
+.badge.danger {
+  position: relative;
+}
+
+.badge.danger::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--danger);
+  margin-right: 5px;
+}
+
+/* =========================================================
+   KPIS REESTRUCTURADOS (FILA DE 4 COLUMNAS CONTINUA)
+   ========================================================= */
+.inventario-module .corp-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px;
+}
+
+@media (max-width: 1024px) {
+  .inventario-module .corp-kpis-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .inventario-module .corp-kpis-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+

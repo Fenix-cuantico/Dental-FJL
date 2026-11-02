@@ -1,0 +1,274 @@
+/* =========================================================
+   DENTAL FC - MÓDULO DE TÉRMINOS Y CONDICIONES (SISTEMA)
+   Pure Native CSS - 100% Token Driven (Light & Dark Mode)
+   ========================================================= */
+
+.terminos-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.22s ease-out;
+}
+
+/* =========================================================
+   GRID PRINCIPAL EN 2 COLUMNAS
+   ========================================================= */
+.terminos-layout-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .terminos-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   COLUMNA IZQUIERDA: SIDEBAR LEGAL
+   ========================================================= */
+.terminos-sidebar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terminos-info-card {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terminos-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+}
+
+.terminos-version-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.terminos-version-sub {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.terminos-version-badge-wrap {
+  margin-top: 4px;
+}
+
+/* Índice de Secciones */
+.terminos-index-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.terminos-index-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terminos-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+
+.terminos-nav-btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+  transform: translateX(2px);
+}
+
+.terminos-nav-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+}
+
+.terminos-nav-btn.active svg {
+  color: #ffffff;
+}
+
+.terminos-nav-title {
+  flex: 1;
+}
+
+/* =========================================================
+   COLUMNA DERECHA: CONTENIDO DE LA SECCIÓN
+   ========================================================= */
+.terminos-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terminos-content-card {
+  padding: 28px 30px;
+}
+
+.terminos-section-h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.terminos-section-sub {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 6px 0 0 0;
+  line-height: 1.5;
+}
+
+.terminos-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+}
+
+.terminos-content-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terminos-p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Caja de Puntos Clave */
+.terminos-keypoints-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 6px;
+}
+
+.terminos-keypoints-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.terminos-keypoints-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terminos-keypoints-list li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* Normativa Aplicable */
+.terminos-normativa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  font-size: 12.5px;
+  color: var(--text);
+  margin-top: 6px;
+}
+
+:root[data-theme="dark"] .terminos-normativa-pill {
+  background: rgba(37, 99, 235, 0.16);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* =========================================================
+   BARRA INFERIOR (TOGGLE DE CONFORMIDAD Y ACCIONES)
+   ========================================================= */
+.terminos-bottom-bar {
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.terminos-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.terminos-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.terminos-switch.checked {
+  background: var(--ok);
+  border-color: var(--ok);
+}
+
+.terminos-switch-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.terminos-switch.checked .terminos-switch-thumb {
+  transform: translateX(19px);
+}
+
+.terminos-toggle-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+}

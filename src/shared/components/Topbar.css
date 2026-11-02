@@ -1,0 +1,147 @@
+/* =========================================================
+   TOPBAR COMPONENT STYLES
+   ========================================================= */
+
+.topbar {
+  height: 64px;
+  background: var(--topbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  gap: 16px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.crumbs b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.top-spacer {
+  flex: 1;
+}
+
+.top-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.theme-toggle-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.theme-opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.theme-opt:hover {
+  color: var(--text);
+}
+
+.theme-opt.active {
+  background: var(--surface);
+  color: var(--primary-2);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="light"] .theme-opt.active {
+  color: var(--primary);
+}
+
+.notif-badge {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--danger);
+  border: 1.5px solid var(--surface);
+}
+
+.top-user-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px 4px 4px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.top-user-chip:hover {
+  background: var(--hover);
+  border-color: var(--border-strong);
+}
+
+.user-info-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.user-info-text .u-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.user-info-text .u-role {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+#menuBtn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #menuBtn {
+    display: inline-flex;
+  }
+  .top-status-pill {
+    display: none;
+  }
+}

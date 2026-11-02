@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M7.5 3C5 3 3 4.8 3 7.6c0 2 .8 3.5 1.5 5.4.7 1.9.8 4 1.5 6.3.4 1.3 1.6 1.6 2.2.5.8-1.5.9-4.2 3.8-4.2s3 2.7 3.8 4.2c.6 1.1 1.8.8 2.2-.5.7-2.3.8-4.4 1.5-6.3.7-1.9 1.5-3.4 1.5-5.4C21 4.8 19 3 16.5 3c-1.7 0-2.8 1-4.5 1S9.2 3 7.5 3z'/></svg>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora — Dental FJL | ERP Odontológico</title>
+  <meta name="description"
+    content="Sistema integral SaaS de gestión clínica odontológica, citas, odontograma digital y reportes contables." />
+
+  <!-- Google Fonts: Plus Jakarta Sans (Amigable, Moderno, Alta Legibilidad) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    /* Evita parpadeos de tema blanco/oscuro antes del primer render */
+    (function () {
+      try {
+        var t = localStorage.getItem('nexora-theme');
+        if (!t) {
+          t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

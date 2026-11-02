@@ -1,0 +1,11 @@
+/* =========================================================
+   DENTAL FC - MÓDULO DE AUDITORÍA Y SEGURIDAD DEL SISTEMA
+   Pure Native CSS - 100% Token Driven
+   ========================================================= */
+
+.auditoria-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.22s ease-out;
+}

@@ -1,0 +1,527 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - CAJA DIARIA Y COBRANZAS MODULE
+   Pure Native CSS - Enterprise Corporate Standard
+   ========================================================= */
+
+.caja-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   KPIS REESTRUCTURADOS (FILA DE 4 COLUMNAS CONTINUA)
+   ========================================================= */
+.caja-module .corp-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px;
+}
+
+@media (max-width: 1024px) {
+  .caja-module .corp-kpis-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .caja-module .corp-kpis-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   PESTAÑAS DE NAVEGACIÓN DE CAJA
+   ========================================================= */
+.caja-view-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-2);
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  width: fit-content;
+}
+
+.caja-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.caja-tab-btn:hover {
+  color: var(--text);
+  background: var(--surface-3);
+}
+
+.caja-tab-btn.active {
+  background: var(--surface);
+  color: var(--primary);
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-strong);
+}
+
+/* =========================================================
+   GRILLA PRINCIPAL DE PAGOS Y ESTADO DE CUENTA
+   ========================================================= */
+.caja-pagos-grid {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .caja-pagos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   COLUMNA IZQUIERDA: FORMULARIO REGISTRAR NUEVO PAGO
+   ========================================================= */
+.caja-pay-form-card {
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.caja-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.caja-card-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.caja-card-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.caja-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.select-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.input-prefix-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.input-with-prefix {
+  padding-left: 44px !important;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: var(--font-mono);
+}
+
+/* Selector Grilla de 4 Métodos de Pago */
+.metodo-pago-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.metodo-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 6px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--surface-2);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.metodo-btn:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-3);
+  transform: translateY(-1px);
+}
+
+.metodo-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+}
+
+.yape-bg {
+  background: rgba(139, 92, 246, 0.12);
+  color: #8b5cf6;
+}
+
+.plin-bg {
+  background: rgba(6, 182, 212, 0.12);
+  color: #06b6d4;
+}
+
+.efectivo-bg {
+  background: rgba(22, 163, 74, 0.12);
+  color: var(--ok);
+}
+
+.tarjeta-bg {
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--primary);
+}
+
+.metodo-name {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.metodo-check-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Estados Activos por Método */
+.metodo-btn.yape.active {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.08);
+  box-shadow: 0 0 0 1px #8b5cf6;
+}
+
+.metodo-btn.plin.active {
+  border-color: #06b6d4;
+  background: rgba(6, 182, 212, 0.08);
+  box-shadow: 0 0 0 1px #06b6d4;
+}
+
+.metodo-btn.efectivo.active {
+  border-color: var(--ok);
+  background: rgba(22, 163, 74, 0.08);
+  box-shadow: 0 0 0 1px var(--ok);
+}
+
+.metodo-btn.tarjeta.active {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.btn-registrar-pago {
+  height: 44px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* =========================================================
+   COLUMNA DERECHA: ESTADO DE CUENTA & HISTORIAL
+   ========================================================= */
+.caja-pay-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card Estado de Cuenta */
+.caja-account-card {
+  padding: 22px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.caja-account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.caja-account-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.caja-account-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.caja-account-title span {
+  color: var(--primary-2);
+}
+
+.caja-account-doc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.caja-account-stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.caja-stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.caja-stat-item.highlight-deuda {
+  background: var(--surface-3);
+  border-color: var(--border-strong);
+}
+
+.caja-stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.caja-stat-value {
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.text-ok {
+  color: var(--ok) !important;
+}
+
+.text-warn {
+  color: var(--warn) !important;
+}
+
+/* Barra de Progreso Presupuestal */
+.caja-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.caja-progress-bar-track {
+  height: 9px;
+  width: 100%;
+  background: var(--surface-3);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.caja-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.caja-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.caja-progress-percentage {
+  font-weight: 700;
+  color: var(--ok);
+}
+
+.caja-progress-remaining {
+  color: var(--text-muted);
+}
+
+/* Card Historial de Transacciones */
+.caja-tx-card {
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.caja-tx-date {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.caja-tx-monto {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.caja-tx-method-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.caja-tx-method-pill.yape {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.caja-tx-method-pill.plin {
+  background: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.caja-tx-method-pill.efectivo {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--ok);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.caja-tx-method-pill.tarjeta {
+  background: var(--primary-soft);
+  color: var(--primary-2);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.caja-btn-delete {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.caja-btn-delete:hover {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--danger);
+  border-color: rgba(220, 38, 38, 0.2);
+}
+
+/* Time Pill */
+.time-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}

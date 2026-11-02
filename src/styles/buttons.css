@@ -1,0 +1,170 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - BOTONES & ACCIONES
+   Pure Native CSS - Enterprise Design Standard
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:hover {
+  background: var(--hover);
+  border-color: var(--border-strong);
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-ring);
+  border-color: var(--primary);
+}
+
+/* Variante Primaria - Azul Corporativo Formal */
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff !important;
+  border: 1px solid var(--primary);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--primary-2);
+  border-color: var(--primary-2);
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+/* Variante Secundaria */
+.btn-secondary {
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-3);
+  border-color: var(--border-strong);
+}
+
+/* Variante Peligro */
+.btn-danger {
+  color: var(--danger);
+  border-color: var(--border);
+  background: transparent;
+}
+
+.btn-danger:hover {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+}
+
+/* Tamaños */
+.btn-sm {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.btn-lg {
+  height: 44px;
+  padding: 0 22px;
+  font-size: 14.5px;
+  border-radius: 8px;
+}
+
+/* Botón de Icono */
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--text-soft);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.icon-btn:hover {
+  background: var(--hover);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.icon-btn:active {
+  transform: scale(0.94);
+}
+
+.icon-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-ring);
+}
+
+/* Estrella de Favoritos */
+.star {
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease;
+}
+
+.star:hover {
+  color: var(--gold);
+  transform: scale(1.15);
+}
+
+.star.on {
+  color: var(--gold);
+}
+
+/* Botón de Regreso */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.back:hover {
+  color: var(--primary-2);
+  background: var(--hover);
+  transform: translateX(-2px);
+}

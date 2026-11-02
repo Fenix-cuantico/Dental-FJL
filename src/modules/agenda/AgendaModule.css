@@ -1,0 +1,463 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - AGENDA DE CITAS (ENTERPRISE CLINICAL SUITE)
+   Formato Empresarial, Ejecutivo, Formal y Riguroso
+   ========================================================= */
+
+.agenda-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: agendaFadeIn 0.2s ease-out;
+}
+
+@keyframes agendaFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   1. HERO BANNER DE AGENDA CORPORATIVO
+   ========================================================= */
+.agenda-hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.agenda-hero-main {
+  flex: 1;
+  min-width: 320px;
+}
+
+.agenda-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.agenda-hero-tag .dot-ok {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ok);
+}
+
+.agenda-hero-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.agenda-hero-title span {
+  color: var(--primary);
+}
+
+.agenda-hero-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  max-width: 640px;
+  line-height: 1.45;
+}
+
+.agenda-hero-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.agenda-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.agenda-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   2. KPIS EJECUTIVOS DE AGENDA
+   ========================================================= */
+.agenda-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 1100px) {
+  .agenda-kpis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .agenda-kpis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.agenda-kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.agenda-kpi-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.agenda-kpi-ic {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  color: var(--text-soft);
+}
+
+.agenda-kpi-ic.primary {
+  color: var(--primary);
+  background: rgba(30, 58, 138, 0.08);
+}
+
+.agenda-kpi-ic.ok {
+  color: var(--ok);
+  background: rgba(21, 128, 61, 0.08);
+}
+
+.agenda-kpi-ic.warn {
+  color: var(--warn);
+  background: rgba(180, 83, 9, 0.08);
+}
+
+.agenda-kpi-ic.purple {
+  color: #475569;
+  background: rgba(71, 85, 105, 0.08);
+}
+
+.agenda-kpi-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.agenda-kpi-val {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  margin-top: 4px;
+}
+
+.agenda-kpi-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   3. BARRA DE CONTROL Y FILTROS CLÍNICOS
+   ========================================================= */
+.agenda-toolbar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.agenda-filters-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.agenda-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agenda-filter-item label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.agenda-nav-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.agenda-nav-date button {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  color: var(--text-soft);
+  transition: all 0.15s ease;
+}
+
+.agenda-nav-date button:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.agenda-date-display {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 0 8px;
+}
+
+/* =========================================================
+   4. GRID MATRICIAL DE ATENCIÓN (DOCTORES Y SILLONES)
+   ========================================================= */
+.agenda-matrix-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  overflow-x: auto;
+}
+
+.agenda-matrix {
+  display: grid;
+  grid-template-columns: 84px repeat(4, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  min-width: 1040px;
+}
+
+/* Cabeceras de Columna */
+.ag-matrix-h {
+  background: var(--surface-2);
+  padding: 12px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid var(--border);
+}
+
+.ag-doc-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ag-doc-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* Columna de Horas */
+.ag-matrix-time {
+  background: var(--surface-2);
+  padding: 12px 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  border-right: 1px solid var(--border);
+}
+
+/* Celdas Horarias */
+.ag-matrix-slot {
+  background: var(--surface);
+  min-height: 96px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  transition: background 0.15s ease;
+}
+
+.ag-matrix-slot:hover {
+  background: var(--hover);
+}
+
+.ag-matrix-slot:empty:hover::after {
+  content: '+ Agendar Turno';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px dashed var(--border-strong);
+  padding: 4px 10px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* TARJETA DE CITA CLÍNICA CORPORATIVA */
+.ag-corp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.ag-corp-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.ag-corp-card.ok {
+  border-left: 3.5px solid var(--ok);
+}
+
+.ag-corp-card.warn {
+  border-left: 3.5px solid var(--warn);
+}
+
+.ag-corp-card.info {
+  border-left: 3.5px solid var(--primary);
+}
+
+.ag-corp-card.danger {
+  border-left: 3.5px solid var(--danger);
+  opacity: 0.8;
+}
+
+.ag-corp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.ag-corp-pat {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ag-corp-treat {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ag-corp-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--border);
+  font-size: 10.5px;
+}
+
+.ag-corp-cost {
+  font-weight: 700;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}

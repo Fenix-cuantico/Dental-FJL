@@ -1,0 +1,777 @@
+/* =========================================================
+   DENTAL FC - MÓDULO DE EQUIPO MÉDICO & ESPECIALISTAS
+   Pure Native CSS - 100% Token Driven (Light & Dark Mode)
+   ========================================================= */
+
+.equipo-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.22s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* =========================================================
+   1. PANEL DE BÚSQUEDA Y FILTROS POR ESPECIALIDAD
+   ========================================================= */
+.doc-filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.doc-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.doc-search-wrapper > svg {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.doc-search-input {
+  width: 100%;
+  padding-left: 40px !important;
+  padding-right: 36px !important;
+  height: 42px;
+  font-size: 13.5px;
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+
+.doc-clear-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.doc-clear-btn:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.doc-specialty-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.doc-specialty-chips::-webkit-scrollbar {
+  height: 4px;
+}
+
+.doc-specialty-chips::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+.doc-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.doc-chip-btn:hover {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.doc-chip-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.doc-chip-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 100px;
+  font-size: 10.5px;
+  font-weight: 700;
+  background: var(--surface);
+  color: var(--text-soft);
+}
+
+.doc-chip-btn.active .doc-chip-badge {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+/* =========================================================
+   2. GRID DE TARJETAS ELEVADAS (ELEVATED DOCTOR CARDS)
+   ========================================================= */
+.docgrid-elevated {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.doccard-elevated {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.doccard-elevated:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: 0 14px 28px -4px rgba(15, 23, 42, 0.08), 0 6px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+.doccard-elevated:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+/* Barra superior de acento */
+.doccard-accent-bar {
+  height: 4px;
+  width: 100%;
+}
+
+.doccard-body {
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   3. CABECERA DE LA TARJETA (AVATAR + IDENTIDAD)
+   ========================================================= */
+.doccard-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.doccard-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.doccard-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.doccard-avatar-status {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2.5px solid var(--surface);
+}
+
+.sdot-pulse.ok {
+  background: var(--ok);
+  animation: pulseGreen 2.2s infinite;
+}
+
+.sdot-pulse.info {
+  background: var(--primary);
+}
+
+.sdot-pulse.purple {
+  background: #8b5cf6;
+}
+
+.sdot-pulse.warn {
+  background: var(--warn);
+}
+
+.doccard-identity {
+  flex: 1;
+  min-width: 0;
+}
+
+.doccard-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.doccard-name {
+  font-family: var(--font-heading);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doccard-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.doccard-rating b {
+  font-weight: 700;
+}
+
+.doccard-rating .reviews {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.doccard-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.doccard-specialty-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2.5px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Variantes de Especialidad */
+.esp-blue { background: rgba(37, 99, 235, 0.08); color: var(--primary); }
+.esp-teal { background: rgba(13, 148, 136, 0.08); color: #0d9488; }
+.esp-indigo { background: rgba(79, 70, 229, 0.08); color: #4f46e5; }
+.esp-purple { background: rgba(124, 58, 237, 0.08); color: #7c3aed; }
+.esp-amber { background: rgba(217, 119, 6, 0.08); color: #d97706; }
+.esp-rose { background: rgba(219, 39, 119, 0.08); color: #db2777; }
+.esp-cyan { background: rgba(2, 132, 199, 0.08); color: #0284c7; }
+.esp-emerald { background: rgba(5, 150, 105, 0.08); color: #059669; }
+
+.doccard-cop-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-soft);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   4. TIRA OPERATIVA (SILLÓN + TURNO)
+   ========================================================= */
+.doccard-op-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.doccard-op-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.doccard-op-item svg {
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   5. BENTO STATS (PACIENTES, CITAS HOY, EXPERIENCIA)
+   ========================================================= */
+.doccard-bento-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.bento-tile {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.bento-tile:hover {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.bento-icon-wrapper {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.bento-icon-wrapper.blue { background: rgba(37, 99, 235, 0.1); color: var(--primary); }
+.bento-icon-wrapper.green { background: rgba(16, 185, 129, 0.1); color: var(--ok); }
+.bento-icon-wrapper.purple { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+.bento-val {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+}
+
+.bento-lbl {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   6. PIE DE TARJETA & ACCIONES
+   ========================================================= */
+.doccard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3.5px 9px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-status.ok { background: rgba(16, 185, 129, 0.1); color: var(--ok); }
+.badge-status.info { background: rgba(37, 99, 235, 0.1); color: var(--primary); }
+.badge-status.purple { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+.badge-status.warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); }
+
+.doccard-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.doc-btn-icon-wa {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.doc-btn-icon-wa:hover {
+  background: #25D366;
+  color: #fff;
+  border-color: #25D366;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.doc-btn-ficha,
+.doc-btn-agenda {
+  height: 32px;
+  padding: 0 10px;
+  font-size: 11.5px;
+  gap: 5px;
+}
+
+/* =========================================================
+   7. MODAL DE FICHA MÉDICA DEL ESPECIALISTA
+   ========================================================= */
+.doc-profile-modal {
+  animation: modalScaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalScaleIn {
+  from { opacity: 0; transform: scale(0.96) translateY(6px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.doc-modal-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.doc-modal-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+
+.doc-modal-sub .esp {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.doc-modal-sub .sep {
+  color: var(--text-muted);
+}
+
+.doc-modal-sub .cop {
+  font-weight: 600;
+}
+
+.doc-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.doc-modal-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .doc-modal-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doc-modal-info-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.doc-modal-info-card .lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.doc-modal-info-card b {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.doc-modal-info-card .sub-lbl {
+  font-size: 11.5px;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+
+.doc-modal-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .doc-modal-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.metric-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric-box .num {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.metric-box .txt {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.doc-modal-contact-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.contact-item svg {
+  color: var(--primary);
+}
+
+.doc-empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.doc-empty-state h3 {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.doc-empty-state p {
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+
+/* =========================================================
+   REESTRUCTURACIÓN DE KPIS (ANTI-SOBRESATURACIÓN)
+   ========================================================= */
+.equipo-module .corp-kpis-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .equipo-module .corp-kpis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   SELECTOR DE VISTA LISTADO / TARJETAS (ESTÁNDAR ERP)
+   ========================================================= */
+.equipo-filter-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.equipo-view-seg {
+  display: flex;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 2px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.equipo-view-seg button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.equipo-view-seg button:hover {
+  color: var(--text);
+}
+
+.equipo-view-seg button.active {
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================
+   TABLA DE PERSONAL MÉDICO (VISTA LISTADO)
+   ========================================================= */
+.doc-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.doc-table thead th {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.doc-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.doc-table tbody tr:hover {
+  background: rgba(37, 99, 235, 0.03);
+}
+
+:root[data-theme="dark"] .doc-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.doc-table tbody td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text);
+  vertical-align: middle;
+}
+

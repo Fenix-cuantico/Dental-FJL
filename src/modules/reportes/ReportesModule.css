@@ -1,0 +1,55 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - REPORTES E INFORMES CONSOLIDADOS
+   Pure Native CSS - 100% Token Driven (Light & Dark Mode)
+   ========================================================= */
+
+.reportes-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.print-head {
+  display: none;
+}
+
+/* =========================================================
+   ESTILOS DE IMPRESIÓN LIMPIA & EXPORTACIÓN PDF
+   ========================================================= */
+@media print {
+  .print-head {
+    display: block !important;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .head-actions,
+  .seg,
+  .card-pad,
+  .app-foot,
+  .topbar,
+  .sidebar {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  table.data th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+  }
+
+  table.data td {
+    color: #1e293b !important;
+  }
+}

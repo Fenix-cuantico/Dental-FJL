@@ -1,0 +1,453 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - TENANTS MANAGEMENT MODULE
+   Pure Native CSS - Enterprise Corporate Standard
+   ========================================================= */
+
+.tenants-module {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   CONSOLA DE CONTROL MAESTRO (SUPER ADMIN DENTAL FC)
+   ========================================================= */
+.master-control-console-card {
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.master-console-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.master-console-title-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.master-shield-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.master-subtitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  display: block;
+}
+
+.master-title {
+  margin: 2px 0 0 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.master-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--ok-soft);
+  color: var(--ok);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.master-desc {
+  margin: 0 0 18px 0;
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+  max-width: 900px;
+}
+
+.master-kpis-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .master-kpis-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.master-kpi {
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kpi-num {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+
+.kpi-num.ok {
+  color: var(--ok);
+}
+
+.kpi-txt {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* Leyenda de Tenants */
+.tenants-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot.ok {
+  background: var(--ok);
+}
+
+.legend-dot.locked {
+  background: var(--danger);
+}
+
+/* =========================================================
+   GRILLA DE TENANTS Y RAMIFICACIONES DE USUARIOS
+   ========================================================= */
+.tenants-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .tenants-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tenant-card {
+  padding: 22px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.15s ease;
+}
+
+.tenant-card.is-master {
+  border-color: var(--primary);
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+}
+
+.tenant-card.is-restricted {
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+.tenant-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tenant-id-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.tenant-type-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--primary-2);
+}
+
+.btn-toggle-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 14px;
+  font-size: 11.5px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-toggle-status:hover {
+  border-color: var(--border-strong);
+}
+
+.dot-status {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dot-status.ok {
+  background: var(--ok);
+}
+
+.dot-status.err {
+  background: var(--danger);
+}
+
+.tenant-name {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tenant-meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* Ramificación de Usuarios */
+.tenant-branch-section {
+  margin-bottom: 16px;
+}
+
+.tenant-branch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sub-helper {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+.user-branch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.user-branch-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.user-avatar-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 10.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-branch-info {
+  flex: 1;
+  margin-left: 8px;
+  min-width: 0;
+}
+
+.user-name {
+  font-size: 12px;
+  color: var(--text);
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-role {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  display: block;
+}
+
+/* Matriz de Cápsulas de Funciones Bloqueadas / Desbloqueadas */
+.tenant-features-section {
+  margin-top: auto;
+}
+
+.features-capsules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+@media (max-width: 480px) {
+  .features-capsules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-capsule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.feature-capsule:hover {
+  border-color: var(--border-strong);
+}
+
+.feature-capsule.locked {
+  background: rgba(220, 38, 38, 0.04);
+  border-color: rgba(220, 38, 38, 0.25);
+  color: var(--danger);
+}
+
+.feature-capsule.locked .capsule-name {
+  color: var(--danger);
+}
+
+.feature-capsule.unlocked {
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.capsule-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capsule-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.capsule-state {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  opacity: 0.75;
+}
+
+.tenant-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}

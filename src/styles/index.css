@@ -1,0 +1,34 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - STYLES ENTRYPOINT (REACT MODULAR)
+   Arquitectura de Estilos Modular y Desacoplada
+   ========================================================= */
+
+/* 1. Tokens de diseño: Paleta de color, tipografía y variables Dark/Light */
+@import './tokens.css';
+
+/* 2. Reset base, scrollbars finos y tipografía global */
+@import './base.css';
+
+/* 3. Botones, acciones e iconos interactivos */
+@import './buttons.css';
+
+/* 4. Formularios, inputs, selects, switches y checkboxes */
+@import './forms.css';
+
+/* 5. Tarjetas, grids responsivos y métricas KPI */
+@import './cards.css';
+
+/* 6. Tablas de datos, filas y acciones de lista */
+@import './tables.css';
+
+/* 7. Badges de estado, avatares, chips y dots de presencia */
+@import './badges.css';
+
+/* 8. Pestañas (tabs), selectores segmentados y toggles */
+@import './tabs.css';
+
+/* 9. Modales, diálogos y overlays del sistema */
+@import './modals.css';
+
+/* 10. Utilitarios compartidos, swatches e impresión PDF */
+@import './ui.css';

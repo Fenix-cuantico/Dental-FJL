@@ -1,0 +1,1207 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - DASHBOARD GENERAL (AESTHETIC CLINICAL SUITE)
+   Modern, Colorful, Vibrant & Approachable Healthcare UI
+   ========================================================= */
+
+.dashboard-module {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  animation: dashboardFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dashboardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   1. CABECERA EJECUTIVA / CLINICAL HERO (AESTHETIC GRADIENT)
+   ========================================================= */
+.corp-hero {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 247, 255, 0.94) 50%, rgba(245, 243, 255, 0.9) 100%);
+  border: 1px solid rgba(191, 219, 254, 0.75);
+  border-radius: 14px;
+  padding: 22px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 20px -3px rgba(37, 99, 235, 0.07), 0 1px 3px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+:root[data-theme="dark"] .corp-hero {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(23, 37, 84, 0.5) 60%, rgba(30, 27, 75, 0.4) 100%);
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4);
+}
+
+.corp-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+}
+
+.corp-hero-main {
+  flex: 1;
+  min-width: 320px;
+}
+
+.corp-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 11px;
+  border-radius: 20px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  font-size: 11px;
+  font-weight: 700;
+  color: #1d4ed8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 9px;
+}
+
+:root[data-theme="dark"] .corp-hero-tag {
+  background: rgba(37, 99, 235, 0.18);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #93c5fd;
+}
+
+.corp-hero-tag .dot-ok {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+  display: inline-block;
+}
+
+.corp-hero-title {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.corp-hero-title span {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:root[data-theme="dark"] .corp-hero-title span {
+  background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.corp-hero-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  max-width: 660px;
+  line-height: 1.5;
+}
+
+.corp-hero-desc b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.corp-hero-chips {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.corp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-soft);
+  transition: transform 0.15s ease;
+}
+
+.corp-chip:hover {
+  transform: translateY(-1px);
+}
+
+.corp-chip.chip-green {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #047857;
+}
+
+:root[data-theme="dark"] .corp-chip.chip-green {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+.corp-chip.chip-blue {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.22);
+  color: #1d4ed8;
+}
+
+:root[data-theme="dark"] .corp-chip.chip-blue {
+  background: rgba(37, 99, 235, 0.18);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #60a5fa;
+}
+
+.corp-chip.chip-purple {
+  background: rgba(139, 92, 246, 0.09);
+  border-color: rgba(139, 92, 246, 0.24);
+  color: #6d28d9;
+}
+
+:root[data-theme="dark"] .corp-chip.chip-purple {
+  background: rgba(139, 92, 246, 0.18);
+  border-color: rgba(139, 92, 246, 0.35);
+  color: #c084fc;
+}
+
+.corp-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   2. ACCESOS RÁPIDOS CORPORATIVOS CON IDENTIDAD VIBRANTE
+   ========================================================= */
+.corp-actions-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .corp-actions-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .corp-actions-bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+.corp-action-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.corp-action-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 8px 20px -3px rgba(15, 23, 42, 0.08);
+}
+
+.corp-action-ic {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.corp-action-btn:hover .corp-action-ic {
+  transform: scale(1.08);
+}
+
+.corp-action-ic.blue {
+  color: #1d4ed8;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(59, 130, 246, 0.22) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+
+:root[data-theme="dark"] .corp-action-ic.blue {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.2);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+.corp-action-ic.green {
+  color: #059669;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.22) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+}
+
+:root[data-theme="dark"] .corp-action-ic.green {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.corp-action-ic.purple {
+  color: #7c3aed;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(124, 58, 237, 0.22) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+}
+
+:root[data-theme="dark"] .corp-action-ic.purple {
+  color: #a78bfa;
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.corp-action-ic.amber {
+  color: #d97706;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.22) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+}
+
+:root[data-theme="dark"] .corp-action-ic.amber {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.corp-action-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.corp-action-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.corp-action-desc {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   3. KPIS CON BORDES ESTÉTICOS Y COLOR REFINADO
+   ========================================================= */
+.dashboard-module .corp-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .dashboard-module .corp-kpis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-module .corp-kpis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.corp-kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.corp-kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+
+/* Acentos de Borde Superior para cada KPI */
+.corp-kpi-card.kpi-blue {
+  border-top: 3px solid #2563eb;
+}
+.corp-kpi-card.kpi-blue:hover {
+  box-shadow: 0 8px 22px -3px rgba(37, 99, 235, 0.12);
+}
+
+.corp-kpi-card.kpi-emerald {
+  border-top: 3px solid #10b981;
+}
+.corp-kpi-card.kpi-emerald:hover {
+  box-shadow: 0 8px 22px -3px rgba(16, 185, 129, 0.12);
+}
+
+.corp-kpi-card.kpi-purple {
+  border-top: 3px solid #8b5cf6;
+}
+.corp-kpi-card.kpi-purple:hover {
+  box-shadow: 0 8px 22px -3px rgba(139, 92, 246, 0.12);
+}
+
+.corp-kpi-card.kpi-amber {
+  border-top: 3px solid #f59e0b;
+}
+.corp-kpi-card.kpi-amber:hover {
+  box-shadow: 0 8px 22px -3px rgba(245, 158, 11, 0.12);
+}
+
+.corp-kpi-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.corp-kpi-ic {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.corp-kpi-card:hover .corp-kpi-ic {
+  transform: scale(1.08);
+}
+
+.corp-kpi-ic.primary {
+  color: #1d4ed8;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(59, 130, 246, 0.24) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+
+:root[data-theme="dark"] .corp-kpi-ic.primary {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.22);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+.corp-kpi-ic.ok {
+  color: #059669;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.24) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+}
+
+:root[data-theme="dark"] .corp-kpi-ic.ok {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.22);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.corp-kpi-ic.purple {
+  color: #7c3aed;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(124, 58, 237, 0.24) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+}
+
+:root[data-theme="dark"] .corp-kpi-ic.purple {
+  color: #a78bfa;
+  background: rgba(139, 92, 246, 0.22);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.corp-kpi-ic.warn {
+  color: #d97706;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.24) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+}
+
+:root[data-theme="dark"] .corp-kpi-ic.warn {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.22);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.corp-kpi-lbl {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.corp-kpi-val {
+  font-size: 27px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  margin-top: 4px;
+}
+
+.corp-kpi-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 11px;
+  font-size: 12px;
+}
+
+.corp-kpi-trend {
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.corp-kpi-trend.up {
+  color: var(--ok);
+}
+
+.corp-kpi-trend.down {
+  color: var(--warn);
+}
+
+/* =========================================================
+   4. SECCIÓN PRINCIPAL: AGENDA Y REPORTES EJECUTIVOS
+   ========================================================= */
+.corp-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1180px) {
+  .corp-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.corp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.corp-card-head {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--surface);
+}
+
+.corp-card-head h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+}
+
+.corp-card-head h3 svg {
+  color: var(--primary);
+}
+
+/* =========================================================
+   LISTA DE CITAS CLÍNICAS (VISTA PREVIA DE 6 TURNOS)
+   ========================================================= */
+.corp-agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.corp-agenda-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  position: relative;
+  flex: 1;
+  min-height: 56px;
+}
+
+.corp-agenda-item:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.07);
+}
+
+/* Turno Activo Inmediato: Borde azul iluminado y fondo suave */
+.corp-agenda-item.is-active-turn {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(255, 255, 255, 0.98) 100%);
+  border: 1.5px solid rgba(37, 99, 235, 0.45);
+  box-shadow: 0 3px 12px -2px rgba(37, 99, 235, 0.1);
+}
+
+:root[data-theme="dark"] .corp-agenda-item.is-active-turn {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.16) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* 1. Cápsula Horaria Proporcional */
+.agenda-time-capsule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 4px 8px;
+  border-radius: 7px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.corp-agenda-item.is-active-turn .agenda-time-capsule {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.agenda-time-capsule .time-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.corp-agenda-item.is-active-turn .agenda-time-capsule .time-val {
+  color: #1d4ed8;
+}
+
+:root[data-theme="dark"] .corp-agenda-item.is-active-turn .agenda-time-capsule .time-val {
+  color: #60a5fa;
+}
+
+.agenda-time-capsule .time-period {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* 2. Avatares Multicolor Proporcionales */
+.agenda-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  font-size: 12.5px;
+  font-weight: 800;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.corp-agenda-item:hover .agenda-avatar {
+  transform: scale(1.06);
+}
+
+.agenda-avatar.avatar-blue {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+:root[data-theme="dark"] .agenda-avatar.avatar-blue {
+  background: rgba(37, 99, 235, 0.25);
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+.agenda-avatar.avatar-emerald {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+:root[data-theme="dark"] .agenda-avatar.avatar-emerald {
+  background: rgba(16, 185, 129, 0.25);
+  color: #6ee7b7;
+  border-color: rgba(16, 185, 129, 0.45);
+}
+
+.agenda-avatar.avatar-purple {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  color: #5b21b6;
+  border: 1px solid #c4b5fd;
+}
+:root[data-theme="dark"] .agenda-avatar.avatar-purple {
+  background: rgba(139, 92, 246, 0.25);
+  color: #c4b5fd;
+  border-color: rgba(139, 92, 246, 0.45);
+}
+
+.agenda-avatar.avatar-teal {
+  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+  color: #115e59;
+  border: 1px solid #5eead4;
+}
+:root[data-theme="dark"] .agenda-avatar.avatar-teal {
+  background: rgba(20, 184, 166, 0.25);
+  color: #5eead4;
+  border-color: rgba(20, 184, 166, 0.45);
+}
+
+.agenda-avatar.avatar-amber {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+:root[data-theme="dark"] .agenda-avatar.avatar-amber {
+  background: rgba(245, 158, 11, 0.25);
+  color: #fcd34d;
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+/* 3. Información del Paciente (Aislamiento Total Anticolisión) */
+.agenda-info-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.agenda-pat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.agenda-pat-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+}
+
+.agenda-hc-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+.live-dot-ping {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+  display: inline-block;
+  animation: pulseDot 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* Línea de Metadatos Clínica Ampliada y Cómoda */
+.agenda-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.25;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.agenda-meta-line .treat-text {
+  color: var(--primary);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+}
+
+.agenda-meta-line .treat-text svg {
+  color: var(--primary);
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.agenda-meta-line .treat-text span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.agenda-meta-line .doc-text {
+  color: var(--text-soft);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 2;
+}
+
+.agenda-meta-line .box-pill {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.agenda-meta-line .meta-sep {
+  color: var(--border-strong);
+  font-size: 9px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* 4. Columna de Estados y Acciones (Protección y Anclaje Derecho) */
+.agenda-actions-col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.agenda-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.agenda-status-chip .chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.agenda-status-chip.is-live-chip {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #047857;
+  font-weight: 700;
+}
+
+:root[data-theme="dark"] .agenda-status-chip.is-live-chip {
+  background: rgba(16, 185, 129, 0.22);
+  border-color: rgba(16, 185, 129, 0.45);
+  color: #34d399;
+}
+
+.agenda-status-chip .chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.agenda-status-chip.ok {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.28);
+  color: #047857;
+}
+.agenda-status-chip.ok .chip-dot {
+  background: #10b981;
+}
+
+:root[data-theme="dark"] .agenda-status-chip.ok {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+
+.agenda-status-chip.warn {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.28);
+  color: #b45309;
+}
+.agenda-status-chip.warn .chip-dot {
+  background: #f59e0b;
+}
+
+:root[data-theme="dark"] .agenda-status-chip.warn {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.agenda-status-chip.info {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.25);
+  color: #1d4ed8;
+}
+.agenda-status-chip.info .chip-dot {
+  background: #3b82f6;
+}
+
+:root[data-theme="dark"] .agenda-status-chip.info {
+  background: rgba(37, 99, 235, 0.18);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+}
+
+.corp-agenda-item .btn {
+  padding: 5px 12px;
+  font-size: 11.5px;
+  height: 28px;
+  border-radius: 7px;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   PIE DE AGENDA CLÍNICA (ESTRUCTURA DE CIERRE Y RESUMEN)
+   ========================================================= */
+.corp-agenda-footer {
+  padding: 10px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.agenda-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.agenda-footer-left b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.dot-pulse-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+  display: inline-block;
+}
+
+.agenda-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.agenda-foot-stat {
+  font-size: 11px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.agenda-foot-stat b {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.corp-agenda-footer .btn-ghost {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.corp-agenda-footer .btn-ghost:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* =========================================================
+   5. GRÁFICA SEMANAL DE OPERACIONES CON BARRAS EN DEGRADÉ
+   ========================================================= */
+.corp-bars-wrap {
+  padding: 12px 16px 8px;
+}
+
+.corp-bars-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 160px;
+  padding: 10px 0;
+}
+
+.corp-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  height: 100%;
+}
+
+.corp-bar-val {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.corp-bar-track {
+  width: 100%;
+  max-width: 32px;
+  background: linear-gradient(180deg, #93c5fd 0%, #3b82f6 100%);
+  border-radius: 6px 6px 2px 2px;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  min-height: 8px;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+}
+
+:root[data-theme="dark"] .corp-bar-track {
+  background: linear-gradient(180deg, #38bdf8 0%, #1e40af 100%);
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.25);
+}
+
+.corp-bar-track:hover {
+  transform: scaleY(1.05);
+  transform-origin: bottom;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.corp-bar-track.peak {
+  background: linear-gradient(180deg, #60a5fa 0%, #1d4ed8 100%);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.4);
+}
+
+:root[data-theme="dark"] .corp-bar-track.peak {
+  background: linear-gradient(180deg, #7dd3fc 0%, #2563eb 100%);
+}
+
+.corp-bar-day {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.corp-bars-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding: 12px 0 0;
+  font-size: 12px;
+}
+
+/* ODONTOGRAMA RÁPIDO EJECUTIVO */
+.corp-odonto-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 12px;
+}
+
+.corp-tooth-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.corp-tooth-unit:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.corp-tooth-unit span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+/* Caras dentales con color clínico enriquecido */
+.corp-tooth-unit .face {
+  fill: #f8fafc;
+  stroke: #94a3b8;
+  stroke-width: 1.5;
+  transition: fill 0.2s ease;
+}
+
+:root[data-theme="dark"] .corp-tooth-unit .face {
+  fill: #1e293b;
+  stroke: #475569;
+}
+
+.corp-tooth-unit .face.caries {
+  fill: #ef4444 !important;
+  stroke: #b91c1c !important;
+}
+
+.corp-tooth-unit .face.obtur {
+  fill: #0284c7 !important;
+  stroke: #0369a1 !important;
+}
+
+/* =========================================================
+   PIE INSTITUCIONAL DEL DASHBOARD CON ACCESOS LEGALES
+   ========================================================= */
+.corp-dashboard-footer {
+  margin-top: 36px;
+  padding: 18px 22px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border-radius: 10px;
+}
+
+.corp-dashboard-footer .foot-left b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.corp-dashboard-footer .foot-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.foot-legal-link {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.foot-legal-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.foot-legal-link svg {
+  color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .corp-dashboard-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

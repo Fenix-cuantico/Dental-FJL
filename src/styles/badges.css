@@ -1,0 +1,152 @@
+/* =========================================================
+   DENTAL FJL / NEXORA - BADGES, CHIPS, AVATARES & ESTADOS
+   Pure Native CSS - Enterprise Design Standard
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-soft);
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.badge.ok { 
+  background: var(--ok-soft); 
+  color: var(--ok); 
+  border: 1px solid rgba(21, 128, 61, 0.2); 
+}
+
+.badge.warn { 
+  background: var(--warn-soft); 
+  color: var(--warn); 
+  border: 1px solid rgba(180, 83, 9, 0.2); 
+}
+
+.badge.danger { 
+  background: var(--danger-soft); 
+  color: var(--danger); 
+  border: 1px solid rgba(185, 28, 28, 0.2); 
+}
+
+.badge.info { 
+  background: var(--surface-2); 
+  color: var(--primary-2); 
+  border: 1px solid var(--border); 
+}
+
+.badge.purple { 
+  background: var(--surface-2); 
+  color: var(--text-soft); 
+  border: 1px solid var(--border-strong); 
+}
+
+.badge.muted { 
+  background: var(--surface-2); 
+  color: var(--text-muted); 
+  border: 1px solid var(--border); 
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 12.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.chip:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.chip.on {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.avatar.alt { 
+  background: var(--surface-2); 
+  color: var(--text-soft); 
+  border: 1px solid var(--border-strong); 
+}
+
+.avatar.alt2 { 
+  background: var(--surface-2); 
+  color: var(--text-soft); 
+  border: 1px solid var(--border-strong); 
+}
+
+.avatar.alt3 { 
+  background: var(--surface-2); 
+  color: var(--text-soft); 
+  border: 1px solid var(--border-strong); 
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  border: 1px solid var(--border);
+}
+
+/* Indicadores de presencia en vivo - Sin halos de neón */
+.sdot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.sdot.ok { background: var(--ok); }
+.sdot.info { background: var(--primary-2); }
+.sdot.warn { background: var(--warn); }
+.sdot.danger { background: var(--danger); }
